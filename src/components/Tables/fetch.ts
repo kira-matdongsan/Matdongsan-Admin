@@ -74,20 +74,59 @@ export async function getInvoiceTableData() {
 
 export async function getFoodList() {
   // Fake delay
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
     {
-      method: "GET",
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
     },
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch food review");
-  }
-
-  return res.json();
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+  ];
 }
 
 export async function getTopChannels() {

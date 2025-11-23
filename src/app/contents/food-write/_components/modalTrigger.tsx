@@ -87,7 +87,7 @@ export function ModalTrigger() {
           </div>
 
           <div className="col-span-1 grid items-center">
-            <label className="text-body-lg text-transparent">"EMPTY"</label>
+            <label className="text-body-lg text-transparent">EMPTY</label>
             <Button
               label="검색"
               variant="primary"

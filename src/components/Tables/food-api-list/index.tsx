@@ -1,7 +1,8 @@
+"use client";
 import { getFoodList } from "../fetch";
 import { useQuery } from "@tanstack/react-query";
 
-export default async function FoodApiList() {
+export default function FoodApiList() {
   const { data, isLoading } = useQuery({
     queryKey: ["foods"], // search가 queryKey에 들어감
     queryFn: getFoodList,

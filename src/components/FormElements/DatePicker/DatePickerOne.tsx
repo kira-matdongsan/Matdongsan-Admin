@@ -6,9 +6,10 @@ import { useEffect } from "react";
 
 type PropsType = {
   label?: string;
+  required?: boolean;
 };
 
-const DatePickerOne = ({ label }: PropsType) => {
+const DatePickerOne = ({ label, required }: PropsType) => {
   useEffect(() => {
     // Init flatpickr
     flatpickr(".form-datepicker", {
@@ -23,6 +24,7 @@ const DatePickerOne = ({ label }: PropsType) => {
     <div>
       <label className="mb-3 block text-body-sm font-medium text-dark dark:text-white">
         {label}
+        {required && <span className="ml-1 select-none text-red">*</span>}
       </label>
       <div className="relative">
         <input

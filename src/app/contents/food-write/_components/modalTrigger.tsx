@@ -42,31 +42,17 @@ export function ModalTrigger() {
         </h2>
 
         <div className="mb-10 grid grid-cols-7 gap-4">
-          <div className="col-span-4">
-            <label className="text-body-lg dart:text-white font-bold text-dark">
-              음식명
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              <Select
-                label=""
-                placeholder="선택"
-                className="w-full"
-                items={[{ label: "음식명", value: "foodName" }]}
-              />
-              <InputGroup
-                label=""
-                type="text"
-                placeholder="EX) 사과"
-                className="w-full"
-              />
-            </div>
+          <div className="col-span-3">
+            <InputGroup
+              label="음식명"
+              type="text"
+              placeholder="EX) 사과"
+              className="w-full"
+            />
           </div>
-          <div className="col-span-2">
-            <label className="text-body-lg dart:text-white font-bold text-dark">
-              월별
-            </label>
+          <div className="col-span-3">
             <Select
-              label=""
+              label="월별"
               placeholder="선택"
               className="mr-2 w-full min-w-[50px]"
               items={[

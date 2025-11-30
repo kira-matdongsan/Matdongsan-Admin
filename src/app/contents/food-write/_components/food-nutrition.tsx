@@ -23,9 +23,7 @@ export function FoodNutrition() {
               className="mb-4.5"
               items={[
                 { label: "g", value: "g" },
-                { label: "kg", value: "kg" },
-                { label: "통", value: "container" },
-                { label: "묶음", value: "bundle" },
+                { label: "개", value: "EA" },
               ]}
             />
           </div>

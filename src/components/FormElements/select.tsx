@@ -8,6 +8,7 @@ type PropsType = {
   label: string;
   items: { value: string; label: string }[];
   prefixIcon?: React.ReactNode;
+  required?: boolean;
   className?: string;
 } & (
   | { placeholder?: string; defaultValue: string }
@@ -21,6 +22,7 @@ export function Select({
   placeholder,
   prefixIcon,
   className,
+  required,
 }: PropsType) {
   const id = useId();
 
@@ -30,9 +32,14 @@ export function Select({
     <div className={cn("space-y-3", className)}>
       <label
         htmlFor={id}
-        className="block text-body-sm font-medium text-dark dark:text-white"
+        className={
+          label === "NONE"
+            ? "block text-body-sm font-medium text-transparent"
+            : "block text-body-sm font-medium text-dark dark:text-white"
+        }
       >
-        {label}
+        {label === "NONE" ? "NONE" : label}
+        {required && <span className="ml-1 select-none text-red">*</span>}
       </label>
 
       <div className="relative">

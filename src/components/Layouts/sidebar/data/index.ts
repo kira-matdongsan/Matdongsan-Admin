@@ -19,12 +19,16 @@ export const NAV_DATA = [
         icon: Icons.FoodIcon,
         items: [
           {
-            title: "제철 음식 목록",
-            url: "/contents/food-list",
+            title: "제철음식 관리",
+            url: "/contents/food/list",
           },
           {
-            title: "제철 음식 등록",
-            url: "/contents/food-write",
+            title: "제철음식 API 관리",
+            url: "/contents/food/api",
+          },
+          {
+            title: "제철시세 관리",
+            url: "/contents/food/price",
           },
         ],
       },
@@ -33,11 +37,11 @@ export const NAV_DATA = [
         icon: Icons.StoreIcon,
         items: [
           {
-            title: "제철 요리 관리",
+            title: "제철요리 관리",
             url: "/contents/cooking-list",
           },
           {
-            title: "제철 요리 투표 관리 ",
+            title: "제철요리 투표 관리 ",
             url: "/contents/cooking-vote",
           },
         ],
@@ -53,15 +57,19 @@ export const NAV_DATA = [
         ],
       },
       {
-        title: "제철시세",
+        title: "플랫폼 관리",
         icon: Icons.MoneyIcon,
         items: [
           {
-            title: "제철시세 관리",
+            title: "회원 관리",
             url: "/contents/price",
           },
           {
-            title: "제철 요리 투표 관리 ",
+            title: "메인 관리",
+            url: "/contents/vote",
+          },
+          {
+            title: "약관 관리",
             url: "/contents/vote",
           },
         ],

@@ -1,4 +1,6 @@
 "use client";
+import { Checkbox } from "@/components/FormElements/checkbox";
+import { getApiList, getPriceList } from "@/components/Tables/fetch";
 import {
   Table,
   TableBody,
@@ -8,13 +10,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
-import { getFoodList } from "../fetch";
+
 import { useQuery } from "@tanstack/react-query";
 
-export function FoodList({ className }: { className?: string }) {
+export function PriceList({ className }: { className?: string }) {
   const { data, isLoading } = useQuery({
     queryKey: ["foods", ""], // search 없으면 undefined
-    queryFn: getFoodList,
+    queryFn: getPriceList,
   });
 
   if (isLoading || !data) return <div>Loading...</div>;
@@ -33,13 +35,17 @@ export function FoodList({ className }: { className?: string }) {
       <Table>
         <TableHeader>
           <TableRow className="border-none uppercase [&>th]:text-center">
-            <TableHead className="max-w-[15px] !text-left">번호</TableHead>
+            <TableHead className="min-w-[15px]">
+              <Checkbox withIcon="check" label={""} />
+            </TableHead>
+            <TableHead className="min-w-[20px]">번호</TableHead>
             <TableHead className="min-w-[100px]">음식명</TableHead>
-            <TableHead className="min-w-[170px]">공개주차</TableHead>
-            <TableHead className="min-w-[150px]">공개일자</TableHead>
-            <TableHead>노출</TableHead>
-            <TableHead>등록자</TableHead>
-            <TableHead>최종 업데이트일시</TableHead>
+            <TableHead className="min-w-[170px]">어디에서</TableHead>
+            <TableHead className="min-w-[100px]">얼마에</TableHead>
+            <TableHead className="min-w-[50px]">몇개/g</TableHead>
+            <TableHead className="min-w-[50px]">노출</TableHead>
+            <TableHead className="min-w-[80px]">등록자</TableHead>
+            <TableHead>등록일시</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -65,13 +71,17 @@ export function FoodList({ className }: { className?: string }) {
               <TableCell className="!text-right text-green-light-1">
                 ${standardFormat(food.name)}
               </TableCell> */}
+              <TableCell>
+                <Checkbox label="" withIcon="check" />
+              </TableCell>
               <TableCell>{food.seq}</TableCell>
               <TableCell>{food.name}</TableCell>
-              <TableCell>{food.openWeek}</TableCell>
-              <TableCell>{food.openDate}</TableCell>
-              <TableCell>{food.status}</TableCell>
+              <TableCell>{food.where}</TableCell>
+              <TableCell>{food.price}</TableCell>
+              <TableCell>{food.count}</TableCell>
+              <TableCell>{food.openStatus}</TableCell>
               <TableCell>{food.userID}</TableCell>
-              <TableCell>{food.finalUpdate}</TableCell>
+              <TableCell>{food.regDT}</TableCell>
             </TableRow>
           ))}
         </TableBody>

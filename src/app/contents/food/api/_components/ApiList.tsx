@@ -1,4 +1,5 @@
 "use client";
+import { getApiList } from "@/components/Tables/fetch";
 import {
   Table,
   TableBody,
@@ -8,13 +9,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
-import { getFoodList } from "../fetch";
+
 import { useQuery } from "@tanstack/react-query";
 
-export function FoodList({ className }: { className?: string }) {
+export function ApiList({ className }: { className?: string }) {
   const { data, isLoading } = useQuery({
     queryKey: ["foods", ""], // search 없으면 undefined
-    queryFn: getFoodList,
+    queryFn: getApiList,
   });
 
   if (isLoading || !data) return <div>Loading...</div>;
@@ -35,10 +36,8 @@ export function FoodList({ className }: { className?: string }) {
           <TableRow className="border-none uppercase [&>th]:text-center">
             <TableHead className="max-w-[15px] !text-left">번호</TableHead>
             <TableHead className="min-w-[100px]">음식명</TableHead>
-            <TableHead className="min-w-[170px]">공개주차</TableHead>
-            <TableHead className="min-w-[150px]">공개일자</TableHead>
-            <TableHead>노출</TableHead>
-            <TableHead>등록자</TableHead>
+            <TableHead className="min-w-[170px]">식품번호</TableHead>
+            <TableHead className="min-w-[150px]">월별</TableHead>
             <TableHead>최종 업데이트일시</TableHead>
           </TableRow>
         </TableHeader>
@@ -69,8 +68,6 @@ export function FoodList({ className }: { className?: string }) {
               <TableCell>{food.name}</TableCell>
               <TableCell>{food.openWeek}</TableCell>
               <TableCell>{food.openDate}</TableCell>
-              <TableCell>{food.status}</TableCell>
-              <TableCell>{food.userID}</TableCell>
               <TableCell>{food.finalUpdate}</TableCell>
             </TableRow>
           ))}

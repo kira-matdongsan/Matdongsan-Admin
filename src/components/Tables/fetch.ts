@@ -137,6 +137,136 @@ export async function getFoodList(
   ];
 }
 
+export async function getApiList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      openWeek: "2025년도 8월 4주차",
+      openDate: "2025-08-18",
+      status: "Y",
+      userID: "admin",
+      finalUpdate: "2025-08-08 12:44:44",
+    },
+  ];
+}
+
+export async function getPriceList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      name: "옥수수",
+      where: "강원도",
+      price: "2000",
+      count: "2",
+      openStatus: "Y",
+      userID: "ynsong",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      where: "강원도",
+      price: "2000",
+      count: "2",
+      openStatus: "Y",
+      userID: "ynsong",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      where: "강원도",
+      price: "2000",
+      count: "2",
+      openStatus: "Y",
+      userID: "ynsong",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      name: "옥수수",
+      where: "강원도",
+      price: "2000",
+      count: "2",
+      openStatus: "Y",
+      userID: "ynsong",
+      regDT: "2025-08-08 12:44:44",
+    },
+  ];
+}
+
 export async function getTopChannels() {
   // Fake delay
   await new Promise((resolve) => setTimeout(resolve, 1500));

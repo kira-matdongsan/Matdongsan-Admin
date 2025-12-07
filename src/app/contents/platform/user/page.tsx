@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Breadcrumb pageName="제철 요리 관리" />
+      <Breadcrumb pageName="회원 관리" />
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div

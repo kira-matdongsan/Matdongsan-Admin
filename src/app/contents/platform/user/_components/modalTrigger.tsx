@@ -45,7 +45,7 @@ export function ModalTrigger({ open, setOpen }: ModalTriggerProps) {
             <Table className="[&_td]:border-b [&_th]:border-b">
               <TableBody>
                 <TableRow className="text-center text-base font-medium text-dark dark:text-white">
-                  <TableHead className="max-w-[150px]">이메일</TableHead>
+                  <TableHead className="max-w-[150px]">제철요리</TableHead>
                   <TableCell>yyyy@nnn.ccc</TableCell>
                   <TableHead className="min-w-[150px]">이름</TableHead>
                   <TableCell>송예나</TableCell>

@@ -511,3 +511,137 @@ export async function getReportList(
     },
   ];
 }
+
+export async function getVoteList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      cook: "콘치즈",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "대기",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 2,
+      cook: "콘치즈",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "취소",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 3,
+      cook: "콘치즈",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "대기",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 4,
+      cook: "콘치즈",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "완료",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+  ];
+}
+
+export async function getStoryList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      type: "플레이스",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "대기",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 2,
+      type: "제철기록",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "취소",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 3,
+      type: "레시피",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "대기",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 4,
+      type: "레시피",
+      food: "옥수수",
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      imgCount: 3,
+      status: "완료",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+  ];
+}

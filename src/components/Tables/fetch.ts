@@ -645,3 +645,70 @@ export async function getStoryList(
     },
   ];
 }
+
+export async function getMainBannerList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      bannerName: "2026년 2월 3주차",
+      link: "http://",
+      open: "2026.02.16 ~ 2026.02.22",
+      status: "노출",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 2,
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      bannerName: "2026년 2월 3주차",
+      link: "http://",
+      open: "2026.02.16 ~ 2026.02.22",
+      status: "노출",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 3,
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      bannerName: "2026년 2월 3주차",
+      link: "http://",
+      open: "2026.02.16 ~ 2026.02.22",
+      status: "노출",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+    {
+      seq: 4,
+      img: "https://constant-tan-rl1hhmbzlu-rrgllzf9kf.edgeone.dev/Rectangle%20154853%20(1).png",
+      bannerName: "2026년 2월 3주차",
+      link: "http://",
+      open: "2026.02.16 ~ 2026.02.22",
+      status: "노출",
+      regID: "ynsong@naver.com",
+      regDT: "2025-08-08 13:44:44",
+    },
+  ];
+}

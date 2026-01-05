@@ -6,10 +6,9 @@ import { Select } from "@/components/FormElements/select";
 import { cn } from "@/lib/utils";
 import InputGroup from "@/components/FormElements/InputGroup";
 import { Button } from "@/components/ui-elements/button";
-import { FoodList } from "@/components/Tables/food-list";
 import { FoodListSkeleton } from "@/components/Tables/food-list/skeleton";
 import Link from "next/link";
-import { ApiList } from "./_components/ApiList";
+import { StoryList } from "./_components/StoryList";
 
 export const metadata: Metadata = {
   title: "Seasonal Food",
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Breadcrumb pageName="Seasonal Food List" />
+      <Breadcrumb pageName="메인 관리" />
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div
@@ -26,42 +25,36 @@ export default function Page() {
             "col-span-12 grid rounded-[10px] bg-white px-7.5 py-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-8",
           )}
         >
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-[1fr_1fr_0.5fr] sm:gap-4">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-[1fr_2fr_0.5fr] sm:gap-4">
             <div>
               <label className="text-body-lg dart:text-white font-bold text-dark">
-                음식명
+                배너명
               </label>
               <InputGroup
                 label=""
                 type="text"
-                placeholder="EX) 사과"
-                className="w-full min-w-[100px]"
+                placeholder="입력"
+                className="mt-2 w-full min-w-[100px]"
               />
             </div>
 
             <div>
               <label className="text-body-lg dart:text-white font-bold text-dark">
-                월별
+                노출기간
               </label>
-              <div className="flex">
-                <Select
+              <div className="flex items-center">
+                <InputGroup
                   label=""
-                  placeholder="Month"
-                  className="mr-2 w-full min-w-[50px]"
-                  items={[
-                    { label: "1월", value: "1" },
-                    { label: "2월", value: "2" },
-                    { label: "3월", value: "3" },
-                    { label: "4월", value: "4" },
-                    { label: "5월", value: "5" },
-                    { label: "6월", value: "6" },
-                    { label: "7월", value: "7" },
-                    { label: "8월", value: "8" },
-                    { label: "9월", value: "9" },
-                    { label: "10월", value: "10" },
-                    { label: "11월", value: "11" },
-                    { label: "12월", value: "12" },
-                  ]}
+                  type="date"
+                  placeholder="입력"
+                  className="mr-2 mt-2 w-full min-w-[80px]"
+                />
+                -
+                <InputGroup
+                  label=""
+                  type="date"
+                  placeholder="입력"
+                  className="ml-2 mt-2 w-full min-w-[80px]"
                 />
               </div>
             </div>
@@ -80,19 +73,31 @@ export default function Page() {
 
         <div className="col-span-12 grid xl:col-span-8">
           <div className="flex justify-end">
-            <Button
-              label="API 업데이트"
-              variant="primary"
-              size="small"
-              shape="rounded"
-              className="h-[50px] p-3"
-            />
+            <div className="mr-3 flex justify-end">
+              <Button
+                label="삭제"
+                variant="outlinePrimary"
+                size="small"
+                shape="rounded"
+                className="mr-3 h-[50px]"
+              />
+
+              <Link href={"/contents/platform/detail"}>
+                <Button
+                  label="등록"
+                  variant="primary"
+                  size="small"
+                  shape="rounded"
+                  className="h-[50px] p-3"
+                />
+              </Link>
+            </div>
           </div>
         </div>
 
         <div className="col-span-12 grid xl:col-span-8">
           <Suspense fallback={<FoodListSkeleton />}>
-            <ApiList />
+            <StoryList />
           </Suspense>
         </div>
       </div>

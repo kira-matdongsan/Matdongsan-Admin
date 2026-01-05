@@ -74,26 +74,6 @@ export const NAV_DATA = [
           },
         ],
       },
-      {
-        title: "메인 관리",
-        icon: Icons.HomeIcon,
-        items: [
-          {
-            title: "메인 배너 관리",
-            url: "/platform/banner",
-          },
-        ],
-      },
-      {
-        title: "약관 관리",
-        icon: Icons.WarnIcon,
-        items: [
-          {
-            title: "약관 조회",
-            url: "/platform/term",
-          },
-        ],
-      },
       // {
       //   title: "Calendar",
       //   url: "/calendar",

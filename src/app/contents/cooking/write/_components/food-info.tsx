@@ -10,7 +10,7 @@ export function FoodInfo() {
   return (
     <ShowcaseSection title="제철 요리 정보" className="!p-6.5">
       <form action="#"></form>
-      <div className="mb-4.5 flex flex-col gap-4.5 xl:flex-row">
+      <div className="mb-4.5 flex flex-col gap-4.5 xl:flex-col">
         <InputGroup
           label="제철요리 이름"
           type="text"

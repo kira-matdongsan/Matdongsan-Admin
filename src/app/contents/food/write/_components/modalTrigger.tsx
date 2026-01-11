@@ -95,7 +95,6 @@ export function ModalTrigger() {
                   </TableHead>
                   <TableHead className="min-w-[100px]">음식명</TableHead>
                   <TableHead className="min-w-[170px]">식품번호</TableHead>
-                  <TableHead className="min-w-[150px]">공개일자</TableHead>
                   <TableHead>업데이트일시</TableHead>
                 </TableRow>
               </TableHeader>
@@ -110,7 +109,7 @@ export function ModalTrigger() {
                     </TableCell>
                     <TableCell>{food.name}</TableCell>
                     <TableCell>219953</TableCell>
-                    <TableCell>4월</TableCell>
+
                     <TableCell>{food.finalUpdate}</TableCell>
                   </TableRow>
                 ))}

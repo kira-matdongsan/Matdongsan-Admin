@@ -47,9 +47,9 @@ export default function Page() {
                 placeholder="선택"
                 className="mr-5 mt-2 min-w-[150px] !space-y-0"
                 items={[
-                  { label: "승인대기", value: "open" },
-                  { label: "승인", value: "close" },
-                  { label: "승인취소", value: "cancel" },
+                  { label: "플레이스", value: "place" },
+                  { label: "제철기록", value: "contents" },
+                  { label: "레시피", value: "recipe" },
                 ]}
               />
             </div>

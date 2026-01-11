@@ -28,8 +28,11 @@ export default function Page() {
         >
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-[2fr_2fr_1fr] sm:gap-4">
             <div>
+              <label className="text-body-lg dart:text-white font-bold text-dark">
+                이메일 주소
+              </label>
               <InputGroup
-                label="이메일 주소"
+                label=""
                 type="text"
                 placeholder="입력"
                 className="w-full min-w-[100px]"

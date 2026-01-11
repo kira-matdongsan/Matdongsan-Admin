@@ -47,14 +47,14 @@ export default function Page() {
                   label=""
                   type="date"
                   placeholder="입력"
-                  className="mr-2 mt-2 w-full min-w-[80px]"
+                  className="mr-2 w-full min-w-[80px]"
                 />
                 -
                 <InputGroup
                   label=""
                   type="date"
                   placeholder="입력"
-                  className="ml-2 mt-2 w-full min-w-[80px]"
+                  className="ml-2 w-full min-w-[80px]"
                 />
               </div>
             </div>

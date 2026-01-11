@@ -56,7 +56,7 @@ const InputGroup: React.FC<InputGroupProps> = ({
           props.iconPosition === "left"
             ? "[&_svg]:left-4.5"
             : "[&_svg]:right-4.5",
-          label.length === 0 && "mt-0",
+          label.length === 0 && "mt-3",
         )}
       >
         <input

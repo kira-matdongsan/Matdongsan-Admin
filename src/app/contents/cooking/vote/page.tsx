@@ -57,7 +57,6 @@ export default function Page() {
               <Select
                 label=""
                 placeholder="선택"
-                className="mr-5 min-w-[150px] !space-y-0"
                 items={[
                   { label: "승인대기", value: "open" },
                   { label: "승인", value: "close" },
